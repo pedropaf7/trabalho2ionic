@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      IMDB API 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+  <ion-label>ID:</ion-label>
+  <ion-input [(ngModel)] ="id_movie"></ion-input>
+</ion-item>
+<ion-item>
+  <button ion-button (click)="search()">Search</button>
+</ion-item>
+
+<ion-card *ngIf="objRet != null">
+      <ion-card-header>
+        <ion-card-title>{{objRet.Title}}</ion-card-title>
+      </ion-card-header>
+      <img src={{objRet.Title}}/>
+    
+      <ion-card-content >
+        <p> <strong>Ano: </strong>{{objRet.Year}}</p>
+        <p><strong>Gênero: </strong>{{objRet.Genre}}</p>
+        <p><strong>País: </strong>{{objRet.Country}}</p>
+        <p><strong>Diretor: </strong>{{objRet.Director}}</p>
+        <p><strong>Sinopse: </strong> {{objRet.Plot}}</p>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>
